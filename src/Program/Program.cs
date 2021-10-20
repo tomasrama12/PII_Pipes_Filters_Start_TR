@@ -1,6 +1,7 @@
 ﻿using System;
 using CompAndDel.Pipes;
 using CompAndDel.Filters;
+using TwitterUCU;
 
 namespace CompAndDel
 {
@@ -29,6 +30,12 @@ namespace CompAndDel
             // En caso d eque haya problemas con el acceso al path, desabilitar antivirus.
             //parte 2 - Al usar los filtros Negative y Greyscale, se guarda la img. Código en esas clases.
             provider.SavePicture(final, @".\saved.jpg");
+
+
+            var twitter = new TwitterImage();
+            Console.WriteLine(twitter.PublishToTwitter("Test1", @".\savedA.jpg"));
+            Console.WriteLine(twitter.PublishToTwitter("Test2", @".\savedB.jpg"));
+
 
 
         }
