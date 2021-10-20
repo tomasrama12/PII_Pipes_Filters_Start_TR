@@ -15,5 +15,7 @@ namespace CompAndDel
         /// <param name="picture">La imagen a enviar.</param>
         /// <return>La imagen enviada.</return>
         IPicture Send(IPicture picture);
+        
+    
     }
 }

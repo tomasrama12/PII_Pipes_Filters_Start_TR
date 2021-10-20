@@ -14,6 +14,8 @@ namespace CompAndDel.Filters
         protected int[,] kernel;
         protected int complement, divider;
 
+        public PictureProvider provider = new PictureProvider();
+
         /// <summary>
         /// Inicializa una nueva instancia de <c>FilterBlurConvolution</c> asignando el kernel, complemento, y divisor
         /// según https://wikimedia.org/api/rest_v1/media/math/render/svg/91256bfeece3344f8602e288d445e6422c8b8a1c.
@@ -49,6 +51,8 @@ namespace CompAndDel.Filters
                     result.SetColor(x, y, GetFilteredColor(sample));
                 }
             }
+
+            provider.SavePicture(result, @".\savedC.jpg");
 
             return result;
         }

@@ -12,6 +12,8 @@ namespace CompAndDel.Filters
         /// </summary>
         /// <param name="image">La imagen a la cual se le va a aplicar el filtro.</param>
         /// <returns>La imagen recibida pero en escala de grises.</returns>
+        
+        public PictureProvider provider = new PictureProvider();
         public IPicture Filter(IPicture image)
         {
             IPicture result = image.Clone();
@@ -31,6 +33,7 @@ namespace CompAndDel.Filters
                     result.SetColor(x, y, colorGris);
                 }
             }
+            provider.SavePicture(result, @".\savedB.jpg"); //Agregado para guardar
 
             return result;
         }

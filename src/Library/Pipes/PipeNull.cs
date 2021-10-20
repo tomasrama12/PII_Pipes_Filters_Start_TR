@@ -10,6 +10,7 @@ namespace CompAndDel.Pipes
     public class PipeNull : IPipe
     {
         IPicture image;
+        PictureProvider provider = new PictureProvider();
         /// <summary>
         /// Recibe una imagen, la guarda en una variable image y la retorna.
         /// </summary>
@@ -18,6 +19,7 @@ namespace CompAndDel.Pipes
         public IPicture Send(IPicture picture)
         {
             this.image = picture;
+            
             return this.image;
         }
 

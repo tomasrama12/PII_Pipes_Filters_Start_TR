@@ -12,6 +12,8 @@ namespace CompAndDel.Pipes
         IPipe next2Pipe;
         IPipe nextPipe;
         
+        PictureProvider provider = new PictureProvider();
+        
         /// <summary>
         /// La cañería recibe una imagen, la clona y envìa la original por una cañeria y la clonada por otra.
         /// </summary>
@@ -32,6 +34,7 @@ namespace CompAndDel.Pipes
         public IPicture Send(IPicture picture)
         {
             next2Pipe.Send(picture.Clone());
+           
             return this.nextPipe.Send(picture);
         }
     }
